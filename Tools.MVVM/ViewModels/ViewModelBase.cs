@@ -16,7 +16,7 @@ namespace Tools.MVVM.ViewModels
             RaiseAllCanExecuteChanged();
         }
 
-        protected abstract void RaiseAllCanExecuteChanged();
+        protected virtual void RaiseAllCanExecuteChanged() { }
     }
 
     // ViewModelBase Generique => Pour encapsuler les models avant de les utilisés

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo_MVVM_03"
         mc:Ignorable="d"
-        Title="Demo 03" Height="450" Width="800">
+        DataContext="{Binding Source={StaticResource MainVM}}"
+        Title="Demo 03" Height="500" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -19,8 +20,9 @@
                    />
 
         <DataGrid Grid.Row="1" Grid.Column="0"
-                  AutoGenerateColumns="True" 
-                  FontSize="20" />
+                  FontSize="16" AutoGenerateColumns="True" 
+                  ItemsSource="{Binding Items}"
+                  />
 
     </Grid>
 </Window>

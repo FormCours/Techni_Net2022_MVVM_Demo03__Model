@@ -2,8 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Demo_MVVM_03"
+             xmlns:vm="clr-namespace:Demo_MVVM_03.ViewModels"
+             xmlns:conv="clr-namespace:Demo_MVVM_03.Converts"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <!-- ViewModels -->
+        <vm:MainViewModel x:Key="MainVM"/>
+        
+        <!-- Converts -->
+        <conv:BoolToStringConverter x:Key="BoolToString" />
+
     </Application.Resources>
 </Application>
