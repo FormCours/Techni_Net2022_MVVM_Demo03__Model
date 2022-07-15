@@ -1,0 +1,26 @@
+﻿<Window x:Class="Demo_MVVM_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo_MVVM_03"
+        mc:Ignorable="d"
+        Title="Demo 03" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="Vente de voiture 🚘" 
+                   FontSize="42" FontFamily="Comic sans MS"
+                   Foreground="DarkGoldenrod" TextAlignment="Center"
+                   />
+
+        <DataGrid Grid.Row="1" Grid.Column="0"
+                  AutoGenerateColumns="True" 
+                  FontSize="20" />
+
+    </Grid>
+</Window>
