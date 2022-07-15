@@ -20,9 +20,62 @@
                    />
 
         <DataGrid Grid.Row="1" Grid.Column="0"
-                  FontSize="16" AutoGenerateColumns="True" 
-                  ItemsSource="{Binding Items}"
-                  />
+                  FontSize="16" AutoGenerateColumns="False" 
+                  ItemsSource="{Binding Items}">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Marque" Binding="{Binding Brand}"
+                                    IsReadOnly="True" MinWidth="100" Width="auto" />
+
+                <DataGridTextColumn Header="Modele" Binding="{Binding Model}"
+                                    IsReadOnly="True" MinWidth="100" Width="auto" />
+
+                <DataGridTextColumn Header="Condition" Binding="{Binding Condition, Converter={StaticResource ConditionCarToString}}"
+                                    IsReadOnly="True" Width="120" />
+
+                <DataGridTemplateColumn Header="Kilometrage">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Kilometers, StringFormat='{}{0} Km'}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox IsEnabled="{Binding HasStock}" Text="{Binding Kilometers}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridCheckBoxColumn Header="Fonctionnel" Binding="{Binding IsFunctionnal}" />
+
+                <DataGridTemplateColumn Header="Prix">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Price, StringFormat='{}{0} €'}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox IsEnabled="{Binding HasStock}" Text="{Binding Price}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Width="*" />
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Vendu" Command="{Binding SoldCommand}" Margin="0,0,5,0" />
+                                <Button Content="🗑" Command="{Binding DeleteCommand}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

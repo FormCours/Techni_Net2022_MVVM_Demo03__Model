@@ -1,4 +1,6 @@
-﻿namespace Demo_MVVM_03.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Demo_MVVM_03.Models
 {
     public enum ConditionCar
     {

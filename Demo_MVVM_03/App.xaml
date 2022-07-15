@@ -12,6 +12,7 @@
         
         <!-- Converts -->
         <conv:BoolToStringConverter x:Key="BoolToString" />
+        <conv:ConditionCarToStringConverter x:Key="ConditionCarToString" />
 
     </Application.Resources>
 </Application>

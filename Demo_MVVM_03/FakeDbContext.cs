@@ -21,16 +21,18 @@ namespace Demo_MVVM_03
                     Condition = ConditionCar.DAMAGED,
                     IsFunctional = false,
                     Kilometers = 200_000,
+                    Price = 199.99,
                     HasStock = true
                 },
                 new Car
                 {
                     Id = 2,
                     Brand = "Dodge",
-                    Model = "viper",
+                    Model = "Viper",
                     Condition = ConditionCar.NEW,
                     IsFunctional = true,
                     Kilometers = 20,
+                    Price = 95000,
                     HasStock = true
                 }
             };
@@ -91,7 +93,7 @@ namespace Demo_MVVM_03
             {
                 Car? carUpdated = _Cars.SingleOrDefault(c => c.Id == car.Id);
 
-                if (carUpdated is null) return false; 
+                if (carUpdated is null) return false;
 
                 carUpdated.Id = car.Id;
                 carUpdated.Model = car.Model;
