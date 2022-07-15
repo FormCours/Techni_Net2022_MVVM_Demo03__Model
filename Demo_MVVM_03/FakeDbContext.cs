@@ -57,7 +57,17 @@ namespace Demo_MVVM_03
 
             public IEnumerable<Car> GetAll()
             {
-                return _Cars.AsReadOnly();
+                return _Cars.Select(car => new Car
+                {
+                    Id = car.Id,
+                    Brand = car.Brand,
+                    Model = car.Model,
+                    Condition = car.Condition,
+                    IsFunctional = car.IsFunctional,
+                    Kilometers = car.Kilometers,
+                    HasStock = car.HasStock,
+                    Price = car.Price
+                });
             }
 
             public int Insert(Car car)
